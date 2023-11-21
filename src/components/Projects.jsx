@@ -139,7 +139,6 @@ const Projects = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              //   justifyContent: "center",
               alignItems: "flex-start",
               padding: "1rem",
               width: smallScreen ? "85vw" : "25vw",
@@ -164,7 +163,11 @@ const Projects = () => {
               {el?.description}
             </p>
             {el?.link ? (
-              <a href={el?.link} target="_blank">
+              <a
+                href={el?.link}
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
                 <p
                   style={{
                     fontSize: "1.2rem",
