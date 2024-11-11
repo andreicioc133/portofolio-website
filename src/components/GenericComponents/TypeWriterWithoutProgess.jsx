@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "@emotion/react";
 import { useResponsiveValues } from "../../utils/CustomHooks";
+import { FONT_SIZES_DESKTOP, FONT_SIZES_MOBILE } from "../../utils/Constants";
 
 const TypeWriterWithoutProgress = ({ text, delay, isVisible }) => {
   const [currentText, setCurrentText] = useState("");
@@ -26,17 +27,19 @@ const TypeWriterWithoutProgress = ({ text, delay, isVisible }) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          minWidth: "20vw",
-          width: "100%",
-          minHeight: "15vh",
+          minWidth: smallScreen ? "" : "20vw",
+          // width: "100%",
+          minHeight: smallScreen ? "" : "15vh",
           //   alignItems: "center",
-          padding: "1rem 0 1rem 0",
+          padding: smallScreen ? "1vh 1vw 1vh 1vw" : "1rem 0 1rem 0",
         }}
       >
         <div>
           <p
             style={{
-              fontSize: "1.6rem",
+              fontSize: smallScreen
+                ? FONT_SIZES_MOBILE.h3
+                : FONT_SIZES_DESKTOP.h3,
               // color: theme.palette.primary.tertiary,
               background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
               WebkitBackgroundClip: "text",

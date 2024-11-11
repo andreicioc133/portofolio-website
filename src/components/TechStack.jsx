@@ -4,6 +4,8 @@ import { useResponsiveValues } from "../utils/CustomHooks";
 import { motion } from "framer-motion";
 import TypeWriter from "./GenericComponents/TypeWriter";
 import { useIntersection } from "../utils/CustomHooks";
+import { FONT_SIZES_DESKTOP, FONT_SIZES_MOBILE } from "../utils/Constants";
+import TypeWriterWithoutProgress from "./GenericComponents/TypeWriterWithoutProgess";
 
 function TechStack() {
   const theme = useTheme();
@@ -13,21 +15,21 @@ function TechStack() {
   const isVisible = useIntersection(triggerRef, "0px");
 
   const data = [
-    { id: 0, title: "React.js ", maxProgress: 90 },
-    { id: 1, title: "React-Native", maxProgress: 90 },
-    { id: 2, title: "Javascript", maxProgress: 90 },
-    { id: 3, title: "TypeScript", maxProgress: 80 },
-    { id: 4, title: "HTML/CSS ", maxProgress: 90 },
-    { id: 5, title: "Next.js", maxProgress: 70 },
-    { id: 6, title: "Node.js ", maxProgress: 80 },
-    { id: 7, title: "Express.Js", maxProgress: 80 },
-    { id: 8, title: "PostgreSQL", maxProgress: 80 },
-    { id: 9, title: "MongoDB", maxProgress: 80 },
-    { id: 10, title: "Python", maxProgress: 60 },
-    { id: 11, title: "Django", maxProgress: 60 },
-    { id: 12, title: "Git/GitHub/GitLab", maxProgress: 90 },
-    { id: 13, title: "Appium Testing", maxProgress: 50 },
-    { id: 14, title: "Unit Testing", maxProgress: 90 },
+    { id: 0, title: "React.js  ", maxProgress: 100 },
+    { id: 1, title: "React-Native", maxProgress: 100 },
+    { id: 2, title: "Javascript", maxProgress: 100 },
+    { id: 3, title: "TypeScript", maxProgress: 100 },
+    { id: 4, title: "HTML/CSS  ", maxProgress: 100 },
+    { id: 5, title: "Next.js   ", maxProgress: 100 },
+    { id: 6, title: "Node.js   ", maxProgress: 100 },
+    { id: 7, title: "Express.Js", maxProgress: 100 },
+    { id: 8, title: "PostgreSQL", maxProgress: 100 },
+    { id: 9, title: "MongoDB   ", maxProgress: 100 },
+    { id: 10, title: "Python    ", maxProgress: 100 },
+    { id: 11, title: "Canva     ", maxProgress: 100 },
+    { id: 12, title: "Git/GitHub/GitLab", maxProgress: 100 },
+    { id: 13, title: "Appium Testing", maxProgress: 100 },
+    { id: 14, title: "Unit Testing", maxProgress: 100 },
   ];
 
   return (
@@ -50,15 +52,22 @@ function TechStack() {
         justifyContent: "flex-start",
         width: "95vw",
         minHeight: "40vh",
-        marginTop: smallScreen ? "" : "15vh",
-        border: `1px solid ${theme.palette.primary.main}`,
-        boxShadow: `0px 2px 6px 2px ${theme.palette.primary.black}`,
+        marginTop: smallScreen ? "" : "5vh",
+        border: "1px solid",
+        borderRadius: "10px",
+        borderRightWidth: "0px",
+        borderLeftWidth: "0px",
+        borderColor: `${theme.palette.primary.secondary}`,
+        // boxShadow: `0px 0px 4px 1px ${theme.palette.primary.secondary}`,
+        paddingBottom: smallScreen && "5vh",
       }}
     >
       <div style={{ width: "100%" }}>
         <p
           style={{
-            fontSize: "3rem",
+            fontSize: smallScreen
+              ? FONT_SIZES_MOBILE.h1
+              : FONT_SIZES_DESKTOP.h1,
             textAlign: "center",
             background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
             WebkitBackgroundClip: "text",
@@ -73,22 +82,31 @@ function TechStack() {
       <div
         style={{
           display: "flex",
-          width: "100%",
+          width: smallScreen ? "" : "100%",
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        {data.map((el) => (
-          <TypeWriter
-            key={el?.id}
-            text={el?.title}
-            delay="150"
-            maxProgress={el?.maxProgress}
-            isVisible={isVisible}
-          />
-        ))}
+        {smallScreen
+          ? data.map((el) => (
+              <TypeWriterWithoutProgress
+                key={el?.id}
+                text={el?.title}
+                delay="150"
+                isVisible={isVisible}
+              />
+            ))
+          : data.map((el) => (
+              <TypeWriter
+                key={el?.id}
+                text={el?.title}
+                delay="150"
+                maxProgress={el?.maxProgress}
+                isVisible={isVisible}
+              />
+            ))}
       </div>
     </motion.div>
   );

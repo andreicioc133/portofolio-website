@@ -4,6 +4,7 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import { useTheme } from "@emotion/react";
 import { useResponsiveValues } from "../../utils/CustomHooks";
+import { FONT_SIZES_DESKTOP, FONT_SIZES_MOBILE } from "../../utils/Constants";
 
 const TypeWriter = ({ text, delay, maxProgress, isVisible }) => {
   const [currentText, setCurrentText] = useState("");
@@ -31,15 +32,17 @@ const TypeWriter = ({ text, delay, maxProgress, isVisible }) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          minWidth: "30vw",
+          minWidth: smallScreen ? "10vh" : "30vw",
           alignItems: "center",
-          padding: "1rem 0 1rem 0",
+          padding: smallScreen ? "0 5vw 0 5vw" : "2vh 0 2vh 0",
         }}
       >
         <div>
           <p
             style={{
-              fontSize: "2rem",
+              fontSize: smallScreen
+                ? FONT_SIZES_MOBILE?.h2
+                : FONT_SIZES_DESKTOP?.h2,
               // color: theme.palette.primary.tertiary,
               background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
               WebkitBackgroundClip: "text",
@@ -72,7 +75,7 @@ const TypeWriter = ({ text, delay, maxProgress, isVisible }) => {
             />
             <p
               style={{
-                fontSize: "1.5rem",
+                fontSize: smallScreen ? "18px" : "1.5rem",
                 // textAlign: "center",
                 color: theme.palette.primary.secondary,
                 margin: 0,

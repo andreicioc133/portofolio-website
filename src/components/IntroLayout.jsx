@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { scrollDownByValue } from "../utils/CustomFunctions";
 import { convertVhToPh } from "../utils/CustomFunctions";
 import EmailIcon from "@mui/icons-material/Email";
+import { FONT_SIZES_DESKTOP, FONT_SIZES_MOBILE } from "../utils/Constants";
 
 const IntroLayout = () => {
   const [currentText, setCurrentText] = useState("");
@@ -71,7 +72,7 @@ const IntroLayout = () => {
           >
             <p
               style={{
-                fontSize: smallScreen ? "2rem" : "3rem",
+                fontSize: smallScreen ? "34px" : "42px",
                 // textAlign: "center",
                 // color: theme.palette.primary.tertiary,
                 background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
@@ -87,7 +88,9 @@ const IntroLayout = () => {
             <div style={{ display: "flex", flexDirection: "row" }}>
               <p
                 style={{
-                  fontSize: smallScreen ? "1.2rem" : "2rem",
+                  fontSize: smallScreen
+                    ? FONT_SIZES_MOBILE.h3
+                    : FONT_SIZES_DESKTOP.h1,
                   // textAlign: "center",
                   // color: theme.palette.primary.tertiary,
                   background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
@@ -102,7 +105,9 @@ const IntroLayout = () => {
               </p>
               <p
                 style={{
-                  fontSize: smallScreen ? "1.2rem" : "2rem",
+                  fontSize: smallScreen
+                    ? FONT_SIZES_MOBILE.h3
+                    : FONT_SIZES_DESKTOP.h1,
                   // color: theme.palette.primary.tertiary,
                   background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
                   WebkitBackgroundClip: "text",
@@ -118,7 +123,9 @@ const IntroLayout = () => {
             </div>
             <p
               style={{
-                fontSize: smallScreen ? "1.2rem" : "1.5rem",
+                fontSize: smallScreen
+                  ? FONT_SIZES_MOBILE.h4
+                  : FONT_SIZES_DESKTOP.h3,
                 // textAlign: "center",
                 // color: theme.palette.primary.tertiary,
                 background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
@@ -133,7 +140,9 @@ const IntroLayout = () => {
             </p>
             <p
               style={{
-                fontSize: smallScreen ? "1.2rem" : "1.5rem",
+                fontSize: smallScreen
+                  ? FONT_SIZES_MOBILE.h3
+                  : FONT_SIZES_DESKTOP.h3,
                 // textAlign: "start",
                 // color: theme.palette.primary.tertiary,
                 background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
@@ -225,6 +234,7 @@ const IntroLayout = () => {
               height: "300px",
               overflow: "hidden",
               borderRadius: "50%",
+              marginTop: smallScreen && "5vh",
               //   border: `1px solid ${theme.palette.primary.secondary}`,
               boxShadow: `0px 2px 4px 6px ${theme.palette.primary.secondary}`,
             }}

@@ -12,9 +12,10 @@ const NavBar = () => {
 
   const data = [
     { id: 0, text: "About Me", scrollVh: "100" },
-    { id: 1, text: "Tech Stack", scrollVh: smallScreen ? "350" : "220" },
-    { id: 2, text: "Experience", scrollVh: smallScreen ? "530" : "290" },
-    { id: 3, text: "My Work", scrollVh: smallScreen ? "650" : "370" },
+    { id: 1, text: "Plan Perfect App", scrollVh: smallScreen ? "120" : "100" },
+    { id: 2, text: "Tech Stack", scrollVh: smallScreen ? "350" : "220" },
+    { id: 3, text: "Experience", scrollVh: smallScreen ? "530" : "290" },
+    { id: 4, text: "My Work", scrollVh: smallScreen ? "650" : "370" },
   ];
   return (
     <nav

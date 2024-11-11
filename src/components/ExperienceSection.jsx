@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "@emotion/react";
 import { useResponsiveValues } from "../utils/CustomHooks";
 import { motion } from "framer-motion";
-import GenericButton from "./GenericComponents/GenericButton";
+import { FONT_SIZES_DESKTOP, FONT_SIZES_MOBILE } from "../utils/Constants";
 
 const ExperienceSection = () => {
   const theme = useTheme();
@@ -57,25 +57,24 @@ const ExperienceSection = () => {
           alignItems: "flex-start",
           justifyContent: "flex-start",
           width: "90vw",
-          minHeight: "60vh",
-          marginTop: "10vh",
+          marginTop: smallScreen ? "" : "10vh",
           backgroundColor: theme.palette.primary.main,
-          border: `1px solid ${theme.palette.primary.secondary}`,
           borderRadius: "50px",
-          boxShadow: `0px 1px 4px 2px ${theme.palette.primary.secondary}`,
           padding: smallScreen ? "1rem 0 2rem 0" : "",
         }}
       >
         <div style={{ width: "100%" }}>
           <p
             style={{
-              fontSize: "7vh",
+              fontSize: smallScreen
+                ? FONT_SIZES_MOBILE.h1
+                : FONT_SIZES_DESKTOP.h1,
               textAlign: "center",
               background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               fontWeight: "bold",
-              margin: "1rem",
+              margin: "0 1rem 1rem 1rem",
             }}
           >
             Experience & Education
@@ -100,14 +99,28 @@ const ExperienceSection = () => {
             }}
           >
             <div>
+              {smallScreen ? (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "2px",
+                    backgroundColor: theme.palette.primary.secondary,
+                    marginBottom: "3vh",
+                  }}
+                ></div>
+              ) : (
+                <></>
+              )}
               <p
                 style={{
-                  fontSize: "5vh",
+                  fontSize: smallScreen
+                    ? FONT_SIZES_MOBILE.h1
+                    : FONT_SIZES_DESKTOP.h1,
                   background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   margin: 0,
-                  textAlign: smallScreen ? "center" : "",
+                  textAlign: smallScreen ? "center" : "center",
                 }}
               >
                 Experience
@@ -119,14 +132,16 @@ const ExperienceSection = () => {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: smallScreen ? "center" : "flex-start",
+                    alignItems: smallScreen ? "center" : "center",
                     width: smallScreen ? "80vw" : "40vw",
                   }}
                 >
                   <p
                     style={{
                       margin: "2vh 0 0 0",
-                      fontSize: "3vh",
+                      fontSize: smallScreen
+                        ? FONT_SIZES_MOBILE.h3
+                        : FONT_SIZES_DESKTOP.h3,
                       color: theme.palette.primary.secondary,
                       textAlign: smallScreen ? "center" : "",
                     }}
@@ -139,6 +154,9 @@ const ExperienceSection = () => {
                       color: theme.palette.primary.tertiary,
                       paddingLeft: smallScreen ? "" : "2vh",
                       textAlign: smallScreen ? "center" : "",
+                      fontSize: smallScreen
+                        ? FONT_SIZES_MOBILE.text
+                        : FONT_SIZES_DESKTOP.text,
                     }}
                   >
                     {el.role}
@@ -149,6 +167,9 @@ const ExperienceSection = () => {
                       color: theme.palette.primary.tertiary,
                       paddingLeft: smallScreen ? "" : "2vh",
                       textAlign: smallScreen ? "center" : "",
+                      fontSize: smallScreen
+                        ? FONT_SIZES_MOBILE.text
+                        : FONT_SIZES_DESKTOP.text,
                     }}
                   >
                     {el.period}
@@ -167,16 +188,31 @@ const ExperienceSection = () => {
               alignItems: "center",
             }}
           >
+            {smallScreen ? (
+              <div
+                style={{
+                  width: "100%",
+                  height: "2px",
+                  backgroundColor: theme.palette.primary.secondary,
+                  marginTop: "3vh",
+                }}
+              ></div>
+            ) : (
+              <></>
+            )}
+
             <div>
               <p
                 style={{
-                  fontSize: "5vh",
+                  fontSize: smallScreen
+                    ? FONT_SIZES_MOBILE.h1
+                    : FONT_SIZES_DESKTOP.h1,
                   background: `linear-gradient(to right, ${theme.palette.primary.gradient1} 0%, ${theme.palette.primary.gradient2} 100%)`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   color: theme.palette.primary.secondary,
                   margin: smallScreen ? "2vh 0 0 0" : 0,
-                  textAlign: smallScreen ? "center" : "",
+                  textAlign: smallScreen ? "center" : "center",
                 }}
               >
                 Education
@@ -187,14 +223,16 @@ const ExperienceSection = () => {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: smallScreen ? "center" : "flex-start",
+                    alignItems: smallScreen ? "center" : "center",
                     width: smallScreen ? " 80vw" : "40vw",
                   }}
                 >
                   <p
                     style={{
                       margin: "2vh 0 0 0",
-                      fontSize: "3vh",
+                      fontSize: smallScreen
+                        ? FONT_SIZES_MOBILE.h3
+                        : FONT_SIZES_DESKTOP.h3,
                       color: theme.palette.primary.secondary,
                       textAlign: smallScreen ? "center" : "",
                     }}
@@ -207,6 +245,9 @@ const ExperienceSection = () => {
                       color: theme.palette.primary.tertiary,
                       paddingLeft: smallScreen ? "" : "2vh",
                       textAlign: smallScreen ? "center" : "",
+                      fontSize: smallScreen
+                        ? FONT_SIZES_MOBILE.text
+                        : FONT_SIZES_DESKTOP.text,
                     }}
                   >
                     {el.role}
@@ -217,6 +258,9 @@ const ExperienceSection = () => {
                       color: theme.palette.primary.tertiary,
                       paddingLeft: smallScreen ? "" : "2vh",
                       textAlign: smallScreen ? "center" : "",
+                      fontSize: smallScreen
+                        ? FONT_SIZES_MOBILE.text
+                        : FONT_SIZES_DESKTOP.text,
                     }}
                   >
                     {el.period}
@@ -228,6 +272,18 @@ const ExperienceSection = () => {
 
           {/* ///////////// */}
         </div>
+        {smallScreen ? (
+          <div
+            style={{
+              width: "100%",
+              height: "2px",
+              backgroundColor: theme.palette.primary.secondary,
+              marginTop: "3vh",
+            }}
+          ></div>
+        ) : (
+          <></>
+        )}
       </motion.div>
     </>
   );

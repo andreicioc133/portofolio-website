@@ -22,14 +22,14 @@ import { useAppContext } from "./Store";
 export const MainTheme = createTheme({
   palette: {
     primary: {
-      main: "#1F232D",
-      secondary: "#01ECFB",
+      main: "#ffffff",
+      secondary: "#2e236c",
       //   secondary: "#03C4A1",
       secondaryDarker: "#00A085",
-      tertiary: "#FFFFFF",
-      gradient1: "#009FFF ",
-      gradient2: "#ec2F4B",
-      white: "#FFFFFF",
+      tertiary: "#000000",
+      gradient1: "#2e236c ",
+      gradient2: "#cb6ce6",
+      white: "#ffffff",
       gray: "#cdcdcd",
       black: "#000000",
       onDarkPhoto: "#FFFFFF",

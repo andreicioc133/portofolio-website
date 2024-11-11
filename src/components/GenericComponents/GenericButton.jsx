@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, useTheme, styled } from "@mui/material";
+import { Button, styled } from "@mui/material";
 
 const GenericButton = ({
   text,
