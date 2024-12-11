@@ -27,7 +27,12 @@ const PlanPerfectSection = () => {
         }}
       >
         {smallScreen ? (
-          <div style={{ marginTop: "3vh", marginBottom: "3vh" }}>
+          <div
+            style={{
+              marginTop: "3vh",
+              marginBottom: "3vh",
+            }}
+          >
             <a
               href="https://github.com/andreicioc133/DayPlanner"
               target="blank"
@@ -49,7 +54,7 @@ const PlanPerfectSection = () => {
                   lineHeight: 0,
                   margin: 0,
                   color: theme.palette.primary.secondary,
-                  marginLeft: "0.5vw",
+                  marginLeft: "5px",
                   fontSize: FONT_SIZES_MOBILE.text,
                 }}
               >
@@ -57,6 +62,8 @@ const PlanPerfectSection = () => {
               </p>
             </a>
             <a
+              href="https://apps.apple.com/ro/app/plan-perfect/id6738699979"
+              target="blank"
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -71,15 +78,17 @@ const PlanPerfectSection = () => {
               />
               <p
                 style={{
-                  lineHeight: 0,
+                  lineHeight: 1.5,
                   margin: 0,
                   color: theme.palette.primary.secondary,
-                  marginLeft: "0.5vw",
                   fontSize: FONT_SIZES_MOBILE.text,
-                  marginTop: "5px",
+                  marginTop: "0px",
+                  marginLeft: "5px",
                 }}
               >
-                https://github.com/andreicioc133/DayPlanner
+                https://apps.apple.com/ro/app/plan-perfect/
+                <br />
+                id6738699979
               </p>
             </a>
           </div>
@@ -141,7 +150,9 @@ const PlanPerfectSection = () => {
                 https://github.com/andreicioc133/DayPlanner
               </p>
             </a>
-            {/* <a
+            <a
+              href="https://apps.apple.com/ro/app/plan-perfect/id6738699979"
+              target="blank"
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -163,9 +174,9 @@ const PlanPerfectSection = () => {
                   marginLeft: "0.5vw",
                 }}
               >
-                https://github.com/andreicioc133/DayPlanner
+                https://apps.apple.com/ro/app/plan-perfect/id6738699979
               </p>
-            </a> */}
+            </a>
           </div>
         )}
         {smallScreen ? (
